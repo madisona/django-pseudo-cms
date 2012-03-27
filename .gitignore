@@ -7,4 +7,5 @@
 local.db
 .DS_Store
 
+dist/*
 example/media/*

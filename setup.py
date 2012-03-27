@@ -1,8 +1,9 @@
 from setuptools import setup, find_packages
 
 REQUIREMENTS = (
-    'Django==1.4c2',
+    'Django>=1.4',
     'django-image-helper>=0.1.1',
+    'docutils==0.8.1',
 )
 
 from pseudo_cms import VERSION
@@ -28,7 +29,4 @@ setup(
         "Topic :: Software Development",
         "Topic :: Software Development :: Libraries :: Application Frameworks",
     ],
-    dependency_links = (
-        'http://www.djangoproject.com/download/1.4-rc-2/tarball/#egg=Django-1.4c2',
-    ),
 )
