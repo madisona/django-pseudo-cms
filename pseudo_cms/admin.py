@@ -9,6 +9,7 @@ from pseudo_cms import models
 class ContentAdmin(admin.ModelAdmin):
     list_display = ['thumbnail', 'url', 'title', 'page_title']
     search_fields = ['title', 'page_title', 'body', 'meta_description']
+    exclude = ('body_html',)
 
     fieldsets = (
         ('', {
