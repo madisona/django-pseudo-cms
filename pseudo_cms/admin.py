@@ -19,7 +19,7 @@ class ContentAdmin(admin.ModelAdmin):
             'fields': ('title', 'meta_description'),
         }),
         ('Page Content', {
-            'fields': ('page_title', 'page_tagline', 'body', 'image'),
+            'fields': ('page_title', 'page_tagline', 'content_format', 'body', 'image'),
         })
     )
 
