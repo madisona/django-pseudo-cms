@@ -15,11 +15,12 @@ THUMBNAIL_SIZE = getattr(settings, "PSEUDO_CMS_THUMBNAIL_SIZE", (176, 132))
 
 class Content(models.Model):
     url = models.CharField(max_length=200, unique=True, validators=[internal_path_exists],
-                           help_text="URL endpoint of page content belongs to.")
+                           help_text="URL endpoint of page content belongs to.", db_index=True)
     title = models.CharField(max_length=100, help_text="Title that shows on searches / browser tab.")
     meta_description = models.CharField(max_length=200, help_text="Description that shows in search engine.")
 
     page_title = models.CharField(max_length=60, help_text="Title that shows on page.")
+    page_tagline = models.CharField(max_length=120, help_text="Tagline / Subtitle for page", blank=True)
     content_format = models.CharField(choices=utils.CONTENT_FORMAT_CHOICES, max_length=50, default=utils.PLAIN_TEXT)
     body = models.TextField()
     body_html = models.TextField()

@@ -19,11 +19,12 @@ class ContentAdmin(admin.ModelAdmin):
             'fields': ('title', 'meta_description'),
         }),
         ('Page Content', {
-            'fields': ('page_title', 'body', 'image'),
+            'fields': ('page_title', 'page_tagline', 'body', 'image'),
         })
     )
 
     def thumbnail(self, obj):
+        """Thumbnail for list display preview"""
         thumbnail_url = obj.image.thumbnail.url()
         return '<img src="{0}" width="100" alt="thumbnail" />'.format(thumbnail_url)
     thumbnail.allow_tags = True
