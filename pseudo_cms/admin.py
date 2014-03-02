@@ -25,8 +25,11 @@ class ContentAdmin(admin.ModelAdmin):
 
     def thumbnail(self, obj):
         """Thumbnail for list display preview"""
-        thumbnail_url = obj.image.thumbnail.url()
-        return '<img src="{0}" width="100" alt="thumbnail" />'.format(thumbnail_url)
+        if obj.image:
+            thumbnail_url = obj.image.thumbnail.url()
+            return '<img src="{0}" width="100" alt="thumbnail" />'.format(thumbnail_url)
+        else:
+            return ''
     thumbnail.allow_tags = True
 
     formfield_overrides = {
