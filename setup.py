@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 REQUIREMENTS = (
-    'Django>=1.7,<1.8',
+    'Django>>=1.8,<1.9',
     'django-image-helper>=0.1.1',
     'docutils==0.12',
 )
