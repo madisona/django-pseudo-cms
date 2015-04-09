@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
 REQUIREMENTS = (
-    'Django>=1.4',
+    'Django>=1.7,<1.8',
     'django-image-helper>=0.1.1',
-    'docutils==0.8.1',
+    'docutils==0.12',
 )
 
 from pseudo_cms import VERSION
