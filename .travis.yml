@@ -2,8 +2,7 @@ language: python
 python:
   - "2.7"
 before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq python-dev build-essential libfreetype6-dev libjpeg62-dev
+  - sudo ln -s /usr/include/freetype2 /usr/include/freetype2/freetype
 install:
   - pip install -r requirements/test.txt
   - pip install -r requirements/requirements.txt
