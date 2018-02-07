@@ -1,10 +1,5 @@
 from setuptools import setup, find_packages
 
-REQUIREMENTS = (
-    'Django>>=1.8,<1.9',
-    'django-image-helper>=0.1.1',
-    'docutils==0.12',
-)
 
 from pseudo_cms import VERSION
 
@@ -16,7 +11,7 @@ setup(
     long_description=open('README.rst', 'r').read(),
     url="https://github.com/madisona/django-pseudo-cms",
     packages=find_packages(exclude=["example"]),
-    install_requires=REQUIREMENTS,
+    install_requires=open('requirements/requirements.txt').read().split('\n'),
     zip_safe=False,
     classifiers = [
         "Development Status :: 4 - Beta",

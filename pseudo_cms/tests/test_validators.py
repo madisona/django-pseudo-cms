@@ -8,8 +8,9 @@ __all__ = (
     'ValidURLExistsTests',
 )
 
+
+@test.override_settings(ROOT_URLCONF='pseudo_cms.tests.testing_urls')
 class ValidURLExistsTests(test.TestCase):
-    urls = "pseudo_cms.tests.testing_urls"
 
     def test_returns_none_when_url_path_exists(self):
         path = "/tests/path-one/"

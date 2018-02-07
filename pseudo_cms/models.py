@@ -1,7 +1,7 @@
 
 from django.conf import settings
 from django.db import models
-from django.utils.encoding import force_unicode
+from django.utils.encoding import python_2_unicode_compatible
 
 from image_helper.fields import SizedImageField
 
@@ -13,6 +13,7 @@ IMAGE_SIZE = getattr(settings, "PSEUDO_CMS_IMAGE_SIZE", (600, 450))
 THUMBNAIL_SIZE = getattr(settings, "PSEUDO_CMS_THUMBNAIL_SIZE", (176, 132))
 
 
+@python_2_unicode_compatible
 class Content(models.Model):
     url = models.CharField(max_length=200, unique=True, validators=[internal_path_exists],
                            help_text="URL endpoint of page content belongs to.", db_index=True)
@@ -30,8 +31,8 @@ class Content(models.Model):
     class Meta(object):
         ordering = ('url',)
 
-    def __unicode__(self):
-        return force_unicode(self.url)
+    def __str__(self):
+        return self.url
 
     def save(self, *args, **kwargs):
         self.body_html = utils.convert_to_html(self.body, self.content_format)
