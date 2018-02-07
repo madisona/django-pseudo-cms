@@ -10,7 +10,7 @@ install:
 script:
   - coverage run --source=pseudo_cms manage.py test
   - coverage report --show-missing
-  - flake8 blogger --exclude=pseudo_cms/south_migrations/*,pseudo_cms/migrations* --max-line-length=120
+  - flake8 pseudo_cms --exclude=pseudo_cms/south_migrations/*,pseudo_cms/migrations* --max-line-length=120
 
 env:
   - DJANGO_VERSION=">=1.8,<1.9"
