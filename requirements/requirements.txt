@@ -1,0 +1,3 @@
+Django>=1.8.0,<1.12.0
+django-image-helper>=0.2.1,<0.3.0
+docutils==0.12

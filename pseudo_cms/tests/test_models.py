@@ -1,13 +1,10 @@
-
 from django import test
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError
 
 from pseudo_cms import models, utils
 
-__all__ = (
-    'ContentModelTests',
-)
+__all__ = ('ContentModelTests', )
 
 
 def get_content_model(save=False, **kwargs):
@@ -26,7 +23,8 @@ class ContentModelTests(test.TestCase):
         with self.assertRaises(ValidationError) as ctx:
             content.full_clean()
 
-        self.assertEqual([u"'/tests/bad/path/' is not a valid url."], ctx.exception.message_dict['url'])
+        self.assertEqual([u"'/tests/bad/path/' is not a valid url."],
+                         ctx.exception.message_dict['url'])
 
     def test_url_must_be_unique(self):
         url = "/some/url/"
@@ -71,6 +69,7 @@ class ContentModelTests(test.TestCase):
         body = "This is a title\n"\
                "And some content"
 
-        c = get_content_model(save=True, body=body, content_format=utils.PLAIN_TEXT)
+        c = get_content_model(
+            save=True, body=body, content_format=utils.PLAIN_TEXT)
         c.save()
         self.assertTrue("This is a title<br />And some content" in c.body_html)
