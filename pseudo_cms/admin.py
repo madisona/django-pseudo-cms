@@ -23,7 +23,7 @@ class ContentAdmin(admin.ModelAdmin):
     def thumbnail(self, obj):
         """Thumbnail for list display preview"""
         if obj.image:
-            thumbnail_url = obj.image.thumbnail.url()
+            thumbnail_url = obj.image.thumbnail.url
             return '<img src="{0}" width="100" alt="thumbnail" />'.format(
                 thumbnail_url)
         else:
