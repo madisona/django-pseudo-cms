@@ -17,7 +17,7 @@ class TestView(View):
 
 urlpatterns = [
     url(r'^$', TestView.as_view(), name='home'),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
 ]
 
 # serve media files for sample stuff to work.

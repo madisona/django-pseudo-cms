@@ -11,7 +11,7 @@ setup(
     long_description=open('README.rst', 'r').read(),
     url="https://github.com/madisona/django-pseudo-cms",
     packages=find_packages(exclude=["example"]),
-    install_requires=open('requirements/requirements.txt').read().split('\n'),
+    install_requires=open('requirements/requirements.txt').read().splitlines(),
     zip_safe=False,
     classifiers = [
         "Development Status :: 4 - Beta",
