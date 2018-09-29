@@ -20,7 +20,7 @@ matrix:
 install:
   - pip install -r requirements/test.txt
   - pip install -r requirements/requirements.txt
-  - pip install -q Django=$DJANGO_VERSION
+  - pip install -q Django==$DJANGO_VERSION
 script:
   - coverage run --source=pseudo_cms manage.py test
   - coverage report --show-missing
