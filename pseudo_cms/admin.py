@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.safestring import mark_safe
 
 from image_helper.fields import SizedImageField
 from image_helper.widgets import AdminImagePreviewWidget
@@ -24,12 +25,11 @@ class ContentAdmin(admin.ModelAdmin):
         """Thumbnail for list display preview"""
         if obj.image:
             thumbnail_url = obj.image.thumbnail.url
-            return '<img src="{0}" width="100" alt="thumbnail" />'.format(
-                thumbnail_url)
+            return mark_safe(
+                '<img src="{0}" width="100" alt="thumbnail" />'.format(
+                    thumbnail_url))
         else:
             return ''
-
-    thumbnail.allow_tags = True
 
     formfield_overrides = {
         SizedImageField: {
