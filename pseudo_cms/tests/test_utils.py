@@ -32,4 +32,5 @@ class ConvertToHTMLTests(TestCase):
 
     def test_convert_to_html_uses_plain_text(self):
         result = utils.convert_to_html(self.plain_text, utils.PLAIN_TEXT)
-        self.assertTrue("This is text<br>That&#39;s Cool" in self._strip_tag(result))
+        self.assertTrue(
+            "This is text<br>That&#39;s Cool" in self._strip_tag(result))

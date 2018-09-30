@@ -72,4 +72,5 @@ class ContentModelTests(test.TestCase):
         c = get_content_model(
             save=True, body=body, content_format=utils.PLAIN_TEXT)
         c.save()
-        self.assertTrue("This is a title<br>And some content" in c.body_html.replace("<br />", "<br>"))
+        self.assertTrue("This is a title<br>And some content" in
+                        c.body_html.replace("<br />", "<br>"))
