@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 
 from image_helper.fields import SizedImageField
 
@@ -12,7 +11,6 @@ IMAGE_SIZE = getattr(settings, "PSEUDO_CMS_IMAGE_SIZE", (600, 450))
 THUMBNAIL_SIZE = getattr(settings, "PSEUDO_CMS_THUMBNAIL_SIZE", (176, 132))
 
 
-@python_2_unicode_compatible
 class Content(models.Model):
     url = models.CharField(
         max_length=200,
